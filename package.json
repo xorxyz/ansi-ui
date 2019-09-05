@@ -3,14 +3,33 @@
   "version": "0.0.0",
   "description": "A minimal TUI library for Node and the browser",
   "author": "Diagonal Systems Inc. <info@diagonal.sh>",
+  "maintainer": "Jonathan Dupré <jonathan@diagonal.sh>",
+  "contributors": [
+    "Christopher Jeffrey <chjjeffrey@gmail.com>"
+  ],
   "license": "MIT",
-  "main": "./lib/blessed.js",
+  "main": "./src/index.js",
   "preferGlobal": false,
-  "repository": "git://github.com/xorxyz/blessed.git",
-  "homepage": "https://github.com/xorxyz/blessed",
-  "bugs": { 
-    "url": "http://github.com/chjj/xorxyz/issues"
+  "repository": "git://github.com/xorxyz/ansi-ui.git",
+  "homepage": "https://github.com/xorxyz/ansi-ui",
+  "bugs": {
+    "url": "http://github.com/xorxyz/ansi-ui/issues"
   },
-  "keywords": ["curses", "tui", "terminfo", "termcap"],
-  "tags": ["curses", "tui", "terminfo", "termcap"]
+  "keywords": [
+    "blessed",
+    "curses",
+    "tui",
+    "terminfo",
+    "termcap"
+  ],
+  "tags": [
+    "blessed",
+    "curses",
+    "tui",
+    "terminfo",
+    "termcap"
+  ],
+  "devDependencies": {
+    "standard": "^14.1.0"
+  }
 }

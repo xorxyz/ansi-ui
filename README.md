@@ -2,13 +2,12 @@
 
 A curses-like library with a high-level API for Node and the browser.
 
-This library was forked from `chjj/blessed`.
-
+This library is a fork of `chjj/blessed`.
 
 Goals:
 
 1. Stay as close as possible to the original `blessed` APIs.
-2. Remove unecessary parts from the core.
+2. Strip down, maybe modularize.
 3. Have everything work in the browser by default.
 
 
@@ -18,101 +17,25 @@ Goals:
 $ npm install ansi-ui
 ```
 
+## Usage
+
+See [USAGE](USAGE.md).
+
+
 ## Example
 
-This will render a box with line borders containing the text `'Hello world!'`,
-perfectly centered horizontally and vertically.
+See [EXAMPLE](EXAMPLE.md).
 
-__NOTE__: It is recommend you use either `smartCSR` or `fastCSR` as a
-`blessed.screen` option. This will enable CSR when scrolling text in elements
-or when manipulating lines.
 
-```js
-var blessed = require('blessed');
+## Testing
 
-// Create a screen object. 
-var screen = blessed.screen({
-  smartCSR: true
-});
-
-screen.title = 'my window title';
-
-// Create a box perfectly centered horizontally and vertically.
-var box = blessed.box({
-  top: 'center',
-  left: 'center',
-  width: '50%',
-  height: '50%',
-  content: 'Hello {bold}world{/bold}!',
-  tags: true,
-  border: {
-    type: 'line'
-  },
-  style: {
-    fg: 'white',
-    bg: 'magenta',
-    border: {
-      fg: '#f0f0f0'
-    },
-    hover: {
-      bg: 'green'
-    }
-  }
-});
-
-// Append our box to the screen.
-screen.append(box);
-
-// Add a png icon to the box
-var icon = blessed.image({
-  parent: box,
-  top: 0,
-  left: 0,
-  type: 'overlay',
-  width: 'shrink',
-  height: 'shrink',
-  file: __dirname + '/my-program-icon.png',
-  search: false
-});
-
-// If our box is clicked, change the content.
-box.on('click', function(data) {
-  box.setContent('{center}Some different {red-fg}content{/red-fg}.{/center}');
-  screen.render();
-});
-
-// If box is focused, handle `enter`/`return` and give us some more content.
-box.key('enter', function(ch, key) {
-  box.setContent('{right}Even different {black-fg}content{/black-fg}.{/right}\n');
-  box.setLine(1, 'bar');
-  box.insertLine(1, 'foo');
-  screen.render();
-});
-
-// Quit on Escape, q, or Control-C.
-screen.key(['escape', 'q', 'C-c'], function(ch, key) {
-  return process.exit(0);
-});
-
-// Focus our element.
-box.focus();
-
-// Render the screen.
-screen.render();
-```
-
-#### Testing
-
-Most tests contained in the `test/` directory are interactive. It's up to the
-programmer to determine whether the test is properly displayed. In the future
-it might be better to do something similar to vttest.
+Most tests contained in the `test/` directory are interactive. 
+It's up to the programmer to determine whether the test is properly displayed. In the future it might be better to do something similar to vttest.
 
 
 ## Contribution and License Agreement
 
-If you contribute code to this project, you are implicitly allowing your code
-to be distributed under the MIT license. You are also implicitly verifying that
-all code is your original work. `</legalese>`
+If you contribute code to this project, you are implicitly allowing your code to be distributed under the MIT license. You are also implicitly verifying that all code is your original work. `</legalese>`
 
 
 ## License

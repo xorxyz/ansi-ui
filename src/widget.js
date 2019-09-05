@@ -35,7 +35,6 @@ widget.classes = [
   'Log',
   'Table',
   'ListTable',
-  'Terminal',
   'Image',
   'ANSIImage',
   'OverlayImage',
