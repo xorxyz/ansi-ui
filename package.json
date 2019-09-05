@@ -1,6 +1,6 @@
 {
   "name": "ansi-ui",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A minimal TUI library for Node and the browser",
   "author": "Diagonal Systems Inc. <info@diagonal.sh>",
   "maintainer": "Jonathan Dupré <jonathan@diagonal.sh>",
