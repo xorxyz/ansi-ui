@@ -4,9 +4,6 @@
   "description": "A minimal TUI library for Node and the browser",
   "author": "Diagonal Systems Inc. <info@diagonal.sh>",
   "maintainer": "Jonathan Dupré <jonathan@diagonal.sh>",
-  "contributors": [
-    "Christopher Jeffrey <chjjeffrey@gmail.com>"
-  ],
   "license": "MIT",
   "main": "./src/index.js",
   "preferGlobal": false,
